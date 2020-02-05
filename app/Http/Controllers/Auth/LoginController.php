@@ -7,6 +7,8 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Laracasts\Utilities\JavaScript\JavaScriptFacade as JavaScript;
+use Illuminate\Support\Str;
 use App\User;
 
 class LoginController extends Controller
@@ -43,9 +45,29 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
+
+        $token = Str::random(80);
+
+        User::find(Auth::user()->id)->forceFill([
+            'api_token' => hash('sha256', $token),
+        ])->save();
+
+        $request->session()->put('_api_token', $token);
+
         return response()->json([
             'redirectTo' => '/personal'
         ]);
     }
 
+
+    /**
+     * The user has logged out of the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return mixed
+     */
+    protected function loggedOut(Request $request)
+    {
+        //
+    }
 }

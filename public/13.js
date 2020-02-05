@@ -1,40 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[13],{
 
-/***/ "./resources/js/components/Copyright.js":
-/*!**********************************************!*\
-  !*** ./resources/js/components/Copyright.js ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Copyright; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _material_ui_core_Link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Link */ "./node_modules/@material-ui/core/esm/Link/index.js");
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
-
-
-
-
-function Copyright() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    variant: "body2",
-    color: "textSecondary",
-    align: "center"
-  }, 'Copyright © ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    color: "inherit",
-    href: "https://material-ui.com/"
-  }, "Your Website"), ' ', new Date().getFullYear(), '.');
-}
-
-/***/ }),
-
-/***/ "./resources/js/routes/EmailVerifyPage.js":
-/*!************************************************!*\
-  !*** ./resources/js/routes/EmailVerifyPage.js ***!
-  \************************************************/
+/***/ "./resources/js/components/EmailVerifyPage.js":
+/*!****************************************************!*\
+  !*** ./resources/js/components/EmailVerifyPage.js ***!
+  \****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -61,7 +30,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_LockOutlined__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @material-ui/icons/LockOutlined */ "./node_modules/@material-ui/icons/LockOutlined.js");
 /* harmony import */ var _material_ui_icons_LockOutlined__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_LockOutlined__WEBPACK_IMPORTED_MODULE_15__);
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
-/* harmony import */ var _components_Copyright__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/Copyright */ "./resources/js/components/Copyright.js");
+/* harmony import */ var _Layouts_Copyright__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./Layouts/Copyright */ "./resources/js/components/Layouts/Copyright.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 

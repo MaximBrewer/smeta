@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use TCG\Voyager\Facades\Voyager;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,14 +22,29 @@ Route::get('/password/reset/{token}', 'AppController@index')->name('password_res
 Route::get('/password/confirm', 'AppController@index')->name('password_reset_confirm');
 Route::get('/email/verify', 'AppController@index')->name('email_verify');
 Route::get('/email/verify/{id}/{hash}', 'AppController@index')->name('email_verify_id_hash');
-Route::prefix('personal')->group(function () {
-    Route::get('/', 'AppController@index')->name('index');
-});
+Route::get('personal', 'AppController@index')->name('index');
+Route::get('personal/{control}', 'AppController@index')->name('index');
+Route::get('personal/{control}/{id}', 'AppController@index')->name('index');
+Route::get('personal/{control}/{id}/{action}', 'AppController@index')->name('index');
 
 
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('register', 'Auth\RegisterController@register');
+
+
+Route::get('auth', function(){
+
+    if (Auth::user()) {
+            
+        return [
+            'user' => Auth::user(),
+            'api_token' => Session::get('_api_token')
+        ];
+        
+    }
+
+});
 
 /* 
     $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -43,3 +59,7 @@ Route::post('register', 'Auth\RegisterController@register');
     $this->get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
     $this->post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 */
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

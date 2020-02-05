@@ -65,7 +65,7 @@ class RegisterController extends Controller
     {
 
         return response()->json([
-            'redirectTo' => '/'
+            'redirectTo' => '/personal'
         ]);
 
     }

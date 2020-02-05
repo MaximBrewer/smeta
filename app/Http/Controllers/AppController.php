@@ -29,26 +29,8 @@ class AppController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        if (Auth::user()) {
-            $token = Str::random(80);
-
-            User::find(Auth::user()->id)->forceFill([
-                'api_token' => hash('sha256', $token),
-            ])->save();
-
-            JavaScript::put([
-                'user' => Auth::user(),
-                'api_token' => $token
-            ]);
-            
-        }
-
-        JavaScript::put([
-            'csrf_token' => csrf_token()
-        ]);
-        
         return view('app');
     }
 }

@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +106,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'ru_RU',
 
     /*
     |--------------------------------------------------------------------------
@@ -169,6 +169,7 @@ return [
         /*
          * Application Service Providers...
          */
+        App\Providers\TranslationServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         App\Providers\BroadcastServiceProvider::class,

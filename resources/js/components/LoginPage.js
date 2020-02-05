@@ -15,7 +15,7 @@ import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
-import Copyright from "../components/Copyright";
+import Copyright from "./Layouts/Copyright";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
@@ -26,8 +26,8 @@ const useStyles = makeStyles(theme => ({
         backgroundImage: "url(https://source.unsplash.com/random)",
         backgroundRepeat: "no-repeat",
         backgroundColor:
-            theme.palette.type === "dark"
-                ? theme.palette.grey[900]
+            theme.palette.type === "light"
+                ? theme.palette.grey[500]
                 : theme.palette.grey[50],
         backgroundSize: "cover",
         backgroundPosition: "center"
